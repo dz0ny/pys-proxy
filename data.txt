@@ -1,0 +1,74 @@
+action: pys_api_event
+pixel: facebook
+event: PageView
+data[page_title]: Home
+data[post_type]: page
+data[post_id]: 19
+data[user_role]: guest
+data[plugin]: PixelYourSite
+data[event_url]: localhost/
+ids[]: 1234
+eventID: Q7QJT7zjCtBBdyuFXxFNFP4KEcUZ3xEypVbV
+woo_order: 
+edd_order:
+
+
+>>>>
+
+
+{
+	"data": [{
+		"event_name": "PageView",
+		"event_time": 1617096288,
+		"event_source_url": "localhost\/",
+		"event_id": "Q7QJT7zjCtBBdyuFXxFNFP4KEcUZ3xEypVbV",
+		"user_data": {
+			"client_ip_address": "127.0.0.1",
+			"client_user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/88.0.4324.96 Safari\/537.36"
+		},
+		"custom_data": {
+			"contents": [],
+			"domain": "localhost",
+			"user_roles": "guest",
+			"plugin": "PixelYourSite",
+			"user_role": "guest",
+			"event_url": "localhost\/",
+			"page_title": "Home",
+			"post_type": "page",
+			"post_id": "19"
+		},
+		"action_source": "website"
+	}],
+	"partner_agent": "dvpixelyoursite"
+}
+
+
+curl -X POST \
+  -F 'data=[
+       {
+         "event_name": "Purchase",
+         "event_time": 1617096482,
+         "user_data": {
+           "em": "309a0a5c3e211326ae75ca18196d301a9bdbd1a882a4d2569511033da23f0abd",
+           "client_ip_address": "123.123.123.123",
+           "client_user_agent": "$CLIENT_USER_AGENT",
+           "fbc": "fb.1.1554763741205.AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
+           "fbp": "fb.1.1558571054389.1098115397"
+         },
+         "contents": [
+           {
+             "id": "product123",
+             "quantity": 1,
+             "delivery_category": "home_delivery"
+           }
+         ],
+         "custom_data": {
+           "currency": "usd",
+           "value": 123.45
+         },
+         "event_source_url": "http://jaspers-market.com/product/123",
+         "action_source": "website"
+       }
+     ]' \
+  -F 'access_token=<ACCESS_TOKEN>' \
+  https://graph.facebook.com/v10.0/<PIXEL_ID>/events
